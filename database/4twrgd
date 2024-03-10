@@ -1,0 +1,15 @@
+import telebot
+
+# قم بتعريف التوكن الخاص بالبوت
+bot_token = "6699672036:AAGxv6YrRdoAdUItfJ2AVtJOydtH8mAfXd4"
+
+# إنشاء كائن للبوت
+bot = telebot.TeleBot(bot_token)
+
+# تعريف الرد الخاص بالمالك الأساسي
+@bot.message_handler(func=lambda message: message.from_user.username == "YOUR_USERNAME")
+def owner_reply(message):
+    bot.reply_to(message, "مرحباً، أنا المالك الأساسي!")
+
+# تشغيل البوت
+bot.polling()
